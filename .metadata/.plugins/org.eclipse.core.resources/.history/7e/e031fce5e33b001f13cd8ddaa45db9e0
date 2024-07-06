@@ -26,8 +26,6 @@ public class UsuarioController {
 	public String submitLogin(@RequestParam String usuarioBuscado, @RequestParam String passBuscado, Model model) {
 		Usuario usuario = usuarioService.findByUsernameAndPassword(usuarioBuscado, passBuscado);
 		if (usuario != null) {
-			usuario.setActivo(true);
-			usuarioService.save(usuario);
 			return "redirect:/menu";
 		} else {
 			model.addAttribute("error", "Usuario o contraseña incorrectos");

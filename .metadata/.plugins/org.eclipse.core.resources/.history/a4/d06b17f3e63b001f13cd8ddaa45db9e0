@@ -10,8 +10,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<div th:include="fragments/menu_navegacion :: menu"></div>
-	<!-- 
+
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
 			<a class="navbar-brand" th:href=@{/menu}>Escuela Keepcoding</a>
@@ -31,7 +30,7 @@
 			</div>
 			<a class="btn btn-danger" th:href=@{/login}>Cerrar Sesión</a>
 		</div>
-	</nav>-->
+	</nav>
 
 	<div class="container">
 		<div class="row">

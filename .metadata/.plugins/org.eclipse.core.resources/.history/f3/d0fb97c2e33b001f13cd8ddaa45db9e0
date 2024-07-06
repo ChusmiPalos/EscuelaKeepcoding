@@ -7,6 +7,4 @@ public interface UsuarioService {
 	public Usuario findByUsernameAndPassword (String username, String password);
 	
 	public Usuario guardarUsuario(Usuario usuario);
-	
-	public void save(Usuario usuario);
 }

@@ -23,10 +23,6 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return usuarioRepository.save(usuario);
 	}
 
-	@Override
-	public void save(Usuario usuario) {
-		usuarioRepository.save(usuario);
-	}
 	
 	
 }
