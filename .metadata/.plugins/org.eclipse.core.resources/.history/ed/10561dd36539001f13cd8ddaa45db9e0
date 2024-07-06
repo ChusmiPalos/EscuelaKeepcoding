@@ -1,0 +1,18 @@
+package io.keepcoding.app.escuela.controller;
+
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class UsuarioController {
+
+	@GetMapping({"/","/login"})
+	public String loginUsuario(Model modelo, @Param("userLogin") String userLogin, @Param("passLogin") String passLogin) {
+		System.out.print(userLogin);
+		System.out.print(passLogin);
+		modelo.addAttribute("login", usuarioService.buscarUsuario(userLogin,passLogin));
+		return "login";
+	}
+}

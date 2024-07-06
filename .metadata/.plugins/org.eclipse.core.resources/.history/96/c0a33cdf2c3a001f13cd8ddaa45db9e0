@@ -1,0 +1,10 @@
+package io.keepcoding.app.escuela.service;
+
+import java.util.List;
+
+import io.keepcoding.app.escuela.entity.Usuario;
+
+public interface UsuarioService {
+
+	public List<Usuario> buscarUsuario(String usuarioLogin, String passLogin);
+}

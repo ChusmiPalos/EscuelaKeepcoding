@@ -1,0 +1,44 @@
+package io.keepcoding.app.escuela.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import io.keepcoding.app.escuela.entity.Alumno;
+import io.keepcoding.app.escuela.service.AlumnoService;
+
+@Controller
+public class EscuelaController {
+
+	@Autowired
+	private AlumnoService alumnoService;
+
+	@GetMapping("/menu")
+	public String index(Model modelo) {
+		modelo.addAttribute("alumnos", alumnoService.listarAlumnos());
+		return "menu";
+	}
+
+	@GetMapping("/alumno/new")
+	public String newAlumnoForm(Model modelo) {
+		Alumno alumno = new Alumno();
+		modelo.addAttribute("alumno", alumno);
+		return "crear_alumno";
+	}
+
+	@PostMapping("/alumnoForm")
+	public String saveAlumno(@ModelAttribute("alumno") Alumno alumno) {
+		alumnoService.guardarAlumno(alumno);
+		return "redirect:/menu";
+	}
+
+	@GetMapping("/alumno/editar/{id}")
+	public String updateAlumnoForm(@PathVariable Long id, Model modelo) {
+		modelo.addAttribute("empleado_update", empleadoService.obtenerEmpleado(id));
+		return "editar_empleado";
+	}
+}

@@ -1,0 +1,30 @@
+package io.keepcoding.app.escuela.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import io.keepcoding.app.escuela.service.UsuarioService;
+
+@Controller
+public class UsuarioController {
+	
+	@Autowired
+	private UsuarioService usuarioService;
+
+	@GetMapping({"/","/login"})
+	public String index() {
+		return "login";
+	}
+	
+	
+	
+//	public String loginUsuario(Model modelo, @Param("userLogin") String userLogin, @Param("passLogin") String passLogin) {
+//		System.out.print(userLogin);
+//		System.out.print(passLogin);
+//		modelo.addAttribute("login", usuarioService.buscarUsuario(userLogin,passLogin));
+//		return "login";
+//	}
+}

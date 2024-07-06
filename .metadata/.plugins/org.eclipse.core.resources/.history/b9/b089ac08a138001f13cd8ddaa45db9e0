@@ -1,0 +1,16 @@
+package io.keepcoding.app_escuela.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class AlumnoController {
+
+	@GetMapping("/escuela")
+	public String saludar(Model modelo) {
+		modelo.addAttribute("key", modelo);
+		return "hola";
+	}
+	
+}

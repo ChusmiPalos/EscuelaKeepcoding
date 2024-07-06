@@ -1,0 +1,18 @@
+package io.keepcoding.app.escuela.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import io.keepcoding.app.escuela.service.AlumnoService;
+
+@Controller
+public class EscuelaController {
+
+	
+	@GetMapping({"/","/escuela"})
+	public String index(Model modelo) {
+		modelo.addAttribute("alumnos", AlumnoService.listarAlumnos());
+		return "alumno";
+	}
+}

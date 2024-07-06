@@ -1,0 +1,5 @@
+package io.keepcoding.app.escuela.entity;
+
+public class Alumno {
+
+}

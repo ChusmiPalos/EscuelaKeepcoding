@@ -1,0 +1,25 @@
+package io.keepcoding.app.escuela.serviceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import io.keepcoding.app.escuela.entity.Usuario;
+import io.keepcoding.app.escuela.repository.UsuarioRepository;
+import io.keepcoding.app.escuela.service.UsuarioService;
+
+@Service
+public class UsuarioServiceImpl implements UsuarioService{
+
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	@Override
+	public List<Usuario> buscarUsuario(String userLogin, String passLogin) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

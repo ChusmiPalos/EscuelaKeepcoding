@@ -1,0 +1,5 @@
+package io.keepcoding.app.escuela.repository;
+
+public interface AlumnoRepository {
+
+}

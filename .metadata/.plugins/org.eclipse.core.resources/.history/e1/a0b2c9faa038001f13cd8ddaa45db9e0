@@ -1,0 +1,5 @@
+package io.keepcoding.app_escuela.controller;
+
+public class AlumnoController {
+
+}
