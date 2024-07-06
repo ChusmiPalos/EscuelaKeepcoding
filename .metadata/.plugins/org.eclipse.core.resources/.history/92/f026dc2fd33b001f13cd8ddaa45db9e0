@@ -1,0 +1,50 @@
+package io.keepcoding.app.escuela.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import io.keepcoding.app.escuela.entity.Usuario;
+import io.keepcoding.app.escuela.service.UsuarioService;
+
+@Controller
+public class UsuarioController {
+
+	@Autowired
+	private UsuarioService usuarioService;
+
+	@GetMapping({ "/", "/login" })
+	public String index() {
+		return "login";
+	}
+
+	@PostMapping("/submitLogin")
+	public String submitLogin(@RequestParam String usuarioBuscado, @RequestParam String passBuscado, Model model) {
+		Usuario usuario = usuarioService.findByUsuarioAndPassword(usuarioBuscado, passBuscado);
+		if (usuario != null) {
+			return "redirect:/menu";
+		} else {
+			model.addAttribute("error", "Usuario o contraseña incorrectos");
+			return "login";
+		}
+	}
+
+	//	Si pulsa la opción de crear nuevo Usuario...
+	@GetMapping("/usuario/new")
+	public String newUsuarioForm(Model modelo) {
+		Usuario usuario = new Usuario();
+		modelo.addAttribute("usuario", usuario);
+		return "crear_usuario";
+	}
+	
+	@PostMapping("/nuevoUsuario")
+	public String saveUsuario(@ModelAttribute("usuario") Usuario usuario) {
+		
+		usuarioService.guardarUsuario(usuario);
+		return "redirect:/login";
+	}
+}

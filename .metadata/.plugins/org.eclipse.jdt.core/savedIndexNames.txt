@@ -64,7 +64,6 @@ INDEX VERSION 1.134+F:\Material_Bootcamp\Escuela\.metadata\.plugins\org.eclipse.
 1912041910.index
 2728114713.index
 416739447.index
-899395700.index
 2801990088.index
 166552328.index
 1551659515.index

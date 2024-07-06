@@ -4,5 +4,7 @@ import io.keepcoding.app.escuela.entity.Usuario;
 
 public interface UsuarioService {
 
-	public Usuario findByUsuarioAndPassword (String usuario, String password);
+	public Usuario findByUsernameAndPassword (String username, String password);
+	
+	public Usuario guardarUsuario(Usuario usuario);
 }
