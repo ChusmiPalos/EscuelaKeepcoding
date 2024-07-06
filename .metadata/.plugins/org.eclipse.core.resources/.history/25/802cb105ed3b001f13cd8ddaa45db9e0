@@ -1,0 +1,12 @@
+.barra_navegacion {
+	background-color: #eed490;
+}
+
+.nav-item:hover{
+	font-size: 120%;
+}
+
+body {
+	background-color: #444444!important;
+	color: #f1f1f1!important;
+}

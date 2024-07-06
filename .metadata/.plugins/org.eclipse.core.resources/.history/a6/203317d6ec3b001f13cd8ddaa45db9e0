@@ -1,0 +1,7 @@
+.barra_navegacion {
+	background-color: #eed490;
+}
+
+body {
+	background-color: #444444;
+}
