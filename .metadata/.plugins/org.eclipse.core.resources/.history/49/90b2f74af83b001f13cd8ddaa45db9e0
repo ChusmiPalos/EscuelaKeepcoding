@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head th:include="fragments/cabecera :: cabecera"></head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Formulario Registro Nuevo Usuario</h1>
+				<div class="card-body">
+					<form th:action="@{/nuevoUsuario}" method="POST"
+						th:object="${usuario}">
+						<div class="form-group">
+							<label>Nombre:</label> <input type="text" name="nombre"
+								th:field="*{nombre}" class="form-control"
+								placeholder="Escriba un Usuario" required>
+						</div>
+						<div class="form-group">
+							<label>Email:</label> <input type="email" name="email"
+								th:field="*{email}" class="form-control"
+								placeholder="Escriba un email valido" required>
+						</div>
+						<div class="form-group">
+							<label>Usuario:</label> <input type="text" name="username"
+								th:field="*{username}" class="form-control"
+								placeholder="Escriba el Usuario de acceso" required>
+						</div>
+						<div class="form-group">
+							<label>Password:</label> <input type="password" name="password"
+								th:field="*{password}" class="form-control"
+								placeholder="Escriba una contraseña" required>
+						</div>
+						<div class="form-group" hidden>
+							<label>Activo:</label> <input type="text" name="activo"
+								th:field="*{activo}" class="form-control"
+								placeholder="Este usuario esta activo" value="1" required>
+						</div>
+
+						<div class="box-footer">
+							<label>&nbsp;</label>
+							<button class="btn btn-warning form-control">Guardar</button>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+</body>
+</html>

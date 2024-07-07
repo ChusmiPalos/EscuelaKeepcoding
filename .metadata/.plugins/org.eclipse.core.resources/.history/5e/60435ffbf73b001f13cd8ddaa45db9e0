@@ -1,0 +1,18 @@
+package io.keepcoding.app.escuela.service;
+
+import java.util.List;
+
+import io.keepcoding.app.escuela.entity.Alumno;
+
+public interface AlumnoService {
+
+	public List<Alumno> listarAlumnos(String dato);
+	
+	public Alumno guardarAlumno(Alumno alumno);
+	
+	public Alumno obtenerAlumno(Long id);
+	
+	public Alumno actualizarAlumno(Alumno alumno);
+	
+	public void eliminarAlumno(Long id);
+}
