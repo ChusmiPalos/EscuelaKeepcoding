@@ -36,12 +36,14 @@
 						th:href=@{/alumno/editar/{id}(id=${alu.id})}>Editar</a> <a
 						class="btn btn-danger"
 						th:href=@{/alumno/delete/{id}(id=${alu.id})}
-						onclick="return confirm('Estas seguro?');">Borrar</a></td>
+						onclick="return confirm('Estás a punto de eliminar un alumno\nEsta acción no se puede deshacer\n\n¿Estás seguro de eliminarlo?');">Borrar</a></td>
 				</tr>
 
 			</tbody>
 		</table>
-		<img th:src="@{/images/alumnos.jpg}" alt="Cinque Terre" width="100%">
+		<img th:src="@{/images/alumnos.jpg}" class="rounded imagen_enmarcada"
+			alt="Alumnos" width="100%">
+
 	</div>
 
 

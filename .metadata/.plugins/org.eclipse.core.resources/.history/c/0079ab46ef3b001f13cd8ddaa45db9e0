@@ -1,0 +1,21 @@
+.barra_navegacion {
+	background-color: #eed490;
+	height: 45px;
+}
+
+.navbar-brand {
+	font-size:120%;
+}
+
+.imagen_enmarcada {
+	border: 3px double goldenrod;
+}
+
+.nav-item:hover{
+	font-size: 120%;
+}
+
+body {
+	background-color: #444444!important;
+	color: #f1f1f1!important;
+}

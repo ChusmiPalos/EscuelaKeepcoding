@@ -1,0 +1,17 @@
+package io.keepcoding.app.escuela.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import io.keepcoding.app.escuela.entity.Alumno;
+
+@Repository
+public interface AlumnoRepository extends JpaRepository<Alumno, Long> {
+
+	@Query("select p from alumno p where p.nombre like %:nombre% OR p.apellido like %:nombre%")
+	public List<Alumno> filterName(String nombre);
+
+}
